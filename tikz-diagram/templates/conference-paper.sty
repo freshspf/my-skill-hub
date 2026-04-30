@@ -1,0 +1,65 @@
+% 顶会论文模板配色方案
+% 适用场景：学术论文、技术报告、期刊投稿
+% 设计特点：简洁专业，黑白为主，彩色点缀
+
+\definecolor{primary}{HTML}{2C3E50}      % 深灰主色
+\definecolor{secondary}{HTML}{34495E}    % 次要色
+\definecolor{accent1}{HTML}{3498DB}      % 蓝色强调
+\definecolor{accent2}{HTML}{E74C3C}      % 红色强调
+\definecolor{accent3}{HTML}{27AE60}      % 绿色强调
+\definecolor{lightbg}{HTML}{ECF0F1}       % 浅色背景
+\definecolor{darktext}{HTML}{2C3E50}      % 深色文本
+
+% 通用样式定义
+\tikzset{
+    % 主要节点样式
+    mainnode/.style={
+        rectangle,
+        rounded corners=6pt,
+        minimum width=3cm,
+        minimum height=1.5cm,
+        align=center,
+        font=\small\bfseries,
+        draw=primary!80,
+        fill=white,
+        drop shadow={opacity=0.1}
+    },
+    % 强调节点样式
+    accentnode/.style={
+        rectangle,
+        rounded corners=6pt,
+        minimum width=2.5cm,
+        minimum height=1.2cm,
+        align=center,
+        font=\small\bfseries,
+        draw=accent1!80,
+        fill=accent1!10,
+        drop shadow={opacity=0.15}
+    },
+    % 数据节点样式
+    datanode/.style={
+        ellipse,
+        minimum width=2cm,
+        minimum height=0.8cm,
+        align=center,
+        font=\small,
+        draw=primary!60,
+        fill=lightbg
+    },
+    % 连线样式
+    mainarrow/.style={
+        ->,
+        thick,
+        color=primary!70
+    },
+    accentarrow/.style={
+        ->,
+        thick,
+        color=accent1!80
+    },
+    % 标题样式
+    title/.style={
+        font=\Large\bfseries\color{primary},
+        align=center
+    }
+}
