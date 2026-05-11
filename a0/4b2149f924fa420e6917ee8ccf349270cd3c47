@@ -1,0 +1,19 @@
+README.md
+  s_9945d038f9764f::t_ea4d208035e620 2-90
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.4",
+  "base_commit_sha": "a04b2149f924fa420e6917ee8ccf349270cd3c47",
+  "prompts": {},
+  "sessions": {
+    "s_9945d038f9764f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0d089519-406f-4ffa-86f9-fdfa048999c2",
+        "model": "deepseek-v4-pro"
+      },
+      "human_author": "沈鹏飞 <shenpengfei@xiaohongshu.com>"
+    }
+  }
+}
