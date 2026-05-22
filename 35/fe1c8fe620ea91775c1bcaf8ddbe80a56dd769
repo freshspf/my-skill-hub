@@ -1,0 +1,23 @@
+kb-sync/SKILL.md
+  s_d42002ddf8cc80::t_a7a95a678fbbf3 8-13,18,29,35
+codebase-onboarding/SKILL.md
+  s_d42002ddf8cc80::t_7cfb091996e025 104-106,109,111-113,117,119,121,123,125,127,129,131-135,142-146
+  s_d42002ddf8cc80::t_2d57c23fac980e 92,94,100
+  s_d42002ddf8cc80::t_15ca7bd1dc5b60 78-82
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "35fe1c8fe620ea91775c1bcaf8ddbe80a56dd769",
+  "prompts": {},
+  "sessions": {
+    "s_d42002ddf8cc80": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "aaa8b0d8-6040-4dfd-a4b3-b5f4ba6449c2",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "沈鹏飞 <shenpengfei@xiaohongshu.com>"
+    }
+  }
+}
