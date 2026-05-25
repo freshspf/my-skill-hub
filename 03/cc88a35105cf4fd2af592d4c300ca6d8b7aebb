@@ -1,0 +1,21 @@
+deepseek-usage/SKILL.md
+  s_0434266ac30c9b::t_5a1d924a8196e2 1-19
+deepseek-usage/scripts/balance.sh
+  s_0434266ac30c9b::t_61605aad36ca67 1-44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "03cc88a35105cf4fd2af592d4c300ca6d8b7aebb",
+  "prompts": {},
+  "sessions": {
+    "s_0434266ac30c9b": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1aca72f47ffetbwdUvb6FWXWbX",
+        "model": "unknown"
+      },
+      "human_author": "沈鹏飞 <shenpengfei@xiaohongshu.com>"
+    }
+  }
+}
