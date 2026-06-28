@@ -1,0 +1,20 @@
+README.md
+  s_39f8fd3e503430::t_91ff335fcd7879 71-73
+  s_39f8fd3e503430::t_cc84e71ebabb25 44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.9",
+  "base_commit_sha": "bf25957de56db467cb226006fd0eb21cb7e34e1d",
+  "prompts": {},
+  "sessions": {
+    "s_39f8fd3e503430": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0f234814affeT6lGqqCgt3dwBq",
+        "model": "unknown"
+      },
+      "human_author": "沈鹏飞 <shenpengfei@xiaohongshu.com>"
+    }
+  }
+}
