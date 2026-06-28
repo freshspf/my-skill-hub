@@ -41,6 +41,7 @@
 | `brainstorming` | 需求梳理：聊透接口、流程、数据来源、模糊点 |
 | `retro` | 收尾复盘：提取会话上下文，生成结构化复盘文档 |
 | `codebase-onboarding` | Java/Spring Boot 项目入门：自动分析生成 00-07 文档 |
+| `code-study-doc` | 代码研读学习文档生成：充分读全源码 → 出大纲全景图 → Mermaid 图 + 逐文件讲解，沉淀知识库 |
 | `kb-sync` | 知识库索引同步：扫描新模块，更新 CLAUDE.md + 个人画像.md |
 | `handoff` | 跨会话上下文接力：生成 HANDOFF.md 保存断点 |
 | `tikz-diagram` | TikZ 矢量图生成：架构图、流程图、神经网络图 |
@@ -67,6 +68,9 @@ my-skill-hub/
 │   └── SKILL.md
 ├── codebase-onboarding/
 │   └── SKILL.md
+├── code-study-doc/
+│   ├── SKILL.md
+│   └── reference/doc-skeleton.md
 ├── kb-sync/
 │   └── SKILL.md
 ├── handoff/
