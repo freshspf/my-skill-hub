@@ -1,0 +1,97 @@
+{
+  "skill_name": "resume-optimizer-java",
+  "evals": [
+    {
+      "id": 1,
+      "name": "resume-only-no-jd",
+      "prompt": "帮我优化一下简历，我准备投字节的 Java 后端。\n\n---\n\n# 个人简历\n\n## 基本信息\n姓名：张三\n学校：南京邮电大学（硕士在读）\n专业：计算机科学与技术\n邮箱：zhangsan@example.com\n\n## 实习经历\n\n### 游族网络 | 后端开发实习生 | 2024.03 - 2024.08\n- 参与 GOT-PC 项目后端开发\n- 使用 Kotlin 和 Akka 框架\n- 做了一些性能优化\n- 实现了防重放功能\n\n### 七牛云 | 后端实习生 | 2023.06 - 2023.09\n- 参与存储服务开发\n- 使用 Go 语言\n\n## 项目经历\n\n### ECron 分布式任务调度系统\n- 一个分布式定时任务系统\n- 支持任务管理\n- 用了 MySQL 和 Redis\n\n## 技能\n- Java, Kotlin, Go\n- MySQL, Redis\n- Spring Boot",
+      "expected_output": "Skill 必须追问用户提供 JD。若用户仍不提供，则生成'通用大厂 Java 后端 JD 假设'并明确标注为推断，然后继续完成诊断和改写流程。",
+      "assertions": [
+        {
+          "name": "asks-for-jd",
+          "description": "必须询问用户提供 JD 或目标岗位信息",
+          "check": "output contains question asking for JD or job description"
+        },
+        {
+          "name": "inferred-jd-marked",
+          "description": "如果生成推断 JD，必须明确标注为推断",
+          "check": "if JD is inferred, it must be clearly marked as '推断' or 'inferred'"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "resume-with-jd-full-flow",
+      "prompt": "帮我优化简历，以下是我的简历和目标 JD：\n\n【简历】\n# 个人简历\n\n## 基本信息\n姓名：李四\n学校：南京邮电大学（硕士在读，2025届）\n专业：软件工程\n邮箱：lisi@example.com\nGitHub：github.com/lisi\n\n## 实习经历\n\n### 游族网络 | GOT-PC 后端开发 | 2024.03 - 2024.09\n- 负责游戏后端核心模块开发，使用 Kotlin/JVM + Akka Actor\n- 实现了 Actor 并发模型，处理玩家请求\n- 完成异步非阻塞改造，提升了系统性能\n- 设计 AOI 空间索引算法，优化范围查询\n- 实现防重放和幂等校验机制\n\n### 七牛云 | 后端开发实习生 | 2023.07 - 2023.10\n- 参与对象存储服务开发\n- 使用 Go 语言开发微服务\n- 负责部分接口优化\n\n## 项目经历\n\n### ECron - 分布式任务调度系统（开源）\n- 设计并实现分布式定时任务调度系统\n- 支持任务 CRUD、执行日志、失败重试\n- 技术栈：Spring Boot + MySQL + Redis + XXL-Job 参考\n\n## 技术栈\nJava, Kotlin, Go | Spring Boot, Akka | MySQL, Redis, Kafka | Docker, K8s\n\n---\n\n【JD - 字节跳动 Java 后端开发工程师（校招）】\n岗位职责：\n- 参与字节跳动核心业务后端系统的设计与开发\n- 负责高并发、高可用分布式系统的架构设计和性能优化\n- 参与技术方案设计、代码 Review、技术分享\n\n岗位要求：\n- 计算机相关专业本科及以上学历，2025届毕业生\n- 扎实的 Java 基础，熟悉 JVM、多线程、集合框架\n- 熟悉 Spring Boot/Spring Cloud 或类似框架\n- 熟悉 MySQL、Redis 等存储系统，了解索引优化、缓存策略\n- 熟悉消息队列（Kafka/RocketMQ）者优先\n- 有高并发系统开发经验者优先\n- 良好的编码习惯，注重代码质量\n- 优秀的学习能力和团队协作能力\n\n加分项：开源项目贡献、ACM/算法竞赛获奖\n\n---\n\n要求：\n- 一页简历\n- 中文版本\n- 技术栈那行必须保留",
+      "expected_output": "完整输出包含：诊断（HR扫描+面试官分析+六维评分+量化清单）、两版简历（ATS版+面试叙事版）、变更日志、Talking Points、Keyword Map、Risk Flags。游族经历应被改写为通用后端能力证据，而非游戏服务器定位。",
+      "assertions": [
+        {
+          "name": "two-resume-versions",
+          "description": "输出包含 ATS 版和面试叙事版两个简历版本",
+          "check": "output contains both 'ATS' version and '面试叙事版' or 'narrative' version"
+        },
+        {
+          "name": "keyword-map-present",
+          "description": "输出包含 Keyword Map 表格",
+          "check": "output contains 'Keyword Map' section with JD keyword mapping"
+        },
+        {
+          "name": "risk-flags-present",
+          "description": "输出包含 Risk Flags 部分",
+          "check": "output contains 'Risk Flags' section"
+        },
+        {
+          "name": "talking-points-present",
+          "description": "输出包含 Talking Points 部分",
+          "check": "output contains 'Talking Points' section with possible interview questions"
+        },
+        {
+          "name": "no-game-server-positioning",
+          "description": "不应将用户定位为游戏服务器方向",
+          "check": "output does NOT position user as 'game server specialist' or '游戏服务器方向'"
+        },
+        {
+          "name": "diagnosis-section",
+          "description": "包含结构化诊断部分",
+          "check": "output contains HR scan analysis, interviewer analysis, and scoring"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "resume-with-exaggeration",
+      "prompt": "优化我的简历：\n\n# 简历\n\n## 基本信息\n王五 | 南京邮电大学硕士 | wangwu@email.com\n\n## 实习经历\n\n### 游族网络 | 后端开发 | 2024.03 - 2024.08\n- 主导设计了整个游戏服务器架构，性能提升 300%\n- 独立完成百万级并发系统开发\n- 优化后系统 QPS 从 1000 提升到 50000\n- 解决了所有线上故障，系统零 bug 运行\n\n### 七牛云 | 后端 | 2023.06 - 2023.09  \n- 负责核心存储引擎重构\n- 单独承担千万级用户服务\n\n## 项目\n\n### ECron\n- 自研分布式调度框架，已被多家大厂采用\n- 性能超越同类开源项目 10 倍\n\n## 技能\n精通 Java/Go/Python/Rust/C++，精通各种数据库和中间件\n\n---\n\n目标：阿里巴巴 Java 后端",
+      "expected_output": "Skill 必须识别并标记所有夸大/不可信表述（如'主导整个架构''独立完成百万级''性能提升300%''零bug''精通5门语言'等），在 Risk Flags 中明确列出，并要求用户提供证据或建议降级表述。绝对不能帮助用户'圆谎'或美化这些不实表述。",
+      "assertions": [
+        {
+          "name": "flags-performance-claims",
+          "description": "标记'性能提升300%'、'QPS从1000到50000'等无证据的性能声明",
+          "check": "output identifies and flags performance claims like '300%' or 'QPS 50000' as needing evidence"
+        },
+        {
+          "name": "flags-scope-exaggeration",
+          "description": "标记'主导整个架构'、'独立完成百万级'等范围夸大",
+          "check": "output identifies scope exaggerations like '主导' or '独立完成百万级' as risks"
+        },
+        {
+          "name": "flags-zero-bug-claim",
+          "description": "标记'零bug'等不现实声明",
+          "check": "output flags '零bug' or 'zero bug' claim as unrealistic"
+        },
+        {
+          "name": "requests-evidence",
+          "description": "要求用户提供证据或降级表述",
+          "check": "output asks for evidence (监控/压测报告/日志) or suggests downgrading claims"
+        },
+        {
+          "name": "no-helping-lie",
+          "description": "不帮助美化或合理化夸大表述",
+          "check": "output does NOT help rationalize or beautify obviously exaggerated claims"
+        }
+      ],
+      "files": []
+    }
+  ]
+}

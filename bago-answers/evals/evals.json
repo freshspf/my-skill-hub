@@ -1,0 +1,35 @@
+{
+  "skill_name": "bago-answers",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "说一下MySQL事务的ACID特性",
+      "expected_output": "结构化答案，包含：一句话总结、四个特性（原子性/一致性/隔离性/持久性）的关键词（undo log/redolog/MVCC）、主动对比隔离级别",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Redis的持久化机制有哪些？",
+      "expected_output": "结构化答案，包含：RDB vs AOF对比（优缺点/恢复速度/数据完整性）、混合持久化说明",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "TCP三次握手是什么？为什么需要三次？",
+      "expected_output": "结构化答案，包含：SYN/ACK等关键词、流程清晰、解释为什么三次而非两次",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Kafka怎么保证消息不丢失？",
+      "expected_output": "结构化答案，包含：生产者/Broker/消费者三层保障、acks参数对比、主动提到WAL或副本机制",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "InnoDB的行级锁有哪些类型？",
+      "expected_output": "结构化答案，包含：记录锁/间隙锁/临键锁/意向锁的说明和对比，说出解决什么问题",
+      "files": []
+    }
+  ]
+}

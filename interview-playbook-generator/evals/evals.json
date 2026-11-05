@@ -1,0 +1,77 @@
+{
+  "skill_name": "interview-playbook-generator",
+  "evals": [
+    {
+      "id": 1,
+      "name": "resume-with-code-path",
+      "prompt": "帮我生成面试话术，我的简历在这里：\n\n---\n## 工作经历\n\n**游族网络 | 后端开发实习生 | 2025.12 - 2026.03**\n\n- 项目介绍：基于 Akka Actor 模型的高并发分布式后端服务\n- 跨服异步非阻塞改造：基于 ActorCompletionStage.andAsk() 实现多玩家数据并行异步拉取\n- 高频接口防重放与幂等设计：临时会话令牌 + 请求参数签名\n- 高并发异步持久化：Entity-Wrapper-DataContainer 三层架构 + WriteOnlyInMemoryDb 时间轮\n\n---\n\n代码在 /Users/joer/Downloads/got-pc/[实习]游族产出/\n\n输出到 ~/Desktop/interview_prep.md",
+      "expected_output": "必须使用 Grep/Glob/Read 工具查找代码，话术和追问回答中必须引用具体的代码位置（文件路径 + 类/方法名）作为证据。",
+      "assertions": [
+        {
+          "name": "uses-code-tools",
+          "description": "使用了 Grep/Glob/Read 工具查找代码",
+          "check": "output shows usage of Grep, Glob, or Read tools on the code path"
+        },
+        {
+          "name": "cites-code-evidence",
+          "description": "话术或追问回答中引用了具体代码位置",
+          "check": "output contains file paths or class/method names as evidence"
+        },
+        {
+          "name": "structured-output",
+          "description": "输出包含话术（两版）、追问清单、Q&A详解",
+          "check": "output contains '话术（60-90秒版）', '追问清单', 'Q&A 详解' sections"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "resume-only-no-code",
+      "prompt": "帮我准备面试话术：\n\n## 实习经历\n\n**某公司 | 后端开发 | 2024.06 - 2024.09**\n\n- 负责用户系统重构，使用 Spring Boot + MySQL\n- 实现了分布式缓存方案，提升查询性能\n- 优化了登录接口，响应时间降低 50%\n\n没有代码，输出到 ./interview.md",
+      "expected_output": "由于没有代码，必须把实现细节标为'不确定'或'待确认'，并在【待确认问题】小节列出需要用户补充的信息。不能编造技术细节。",
+      "assertions": [
+        {
+          "name": "marks-uncertain",
+          "description": "实现细节标注为不确定/待确认",
+          "check": "output contains '不确定' or '待确认' or '⚠️' markers for implementation details"
+        },
+        {
+          "name": "has-pending-questions",
+          "description": "输出包含待确认问题小节",
+          "check": "output contains '待确认问题' section with specific questions"
+        },
+        {
+          "name": "no-fabrication",
+          "description": "不编造具体的技术实现细节",
+          "check": "output does NOT claim specific implementation details (like 'you used Redis Cluster' or specific code patterns) without evidence"
+        }
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "resume-with-jd",
+      "prompt": "帮我生成面试话术：\n\n【简历】\n## 项目经历\n\n**ECron 分布式任务调度系统**\n- 基于 MySQL + Redis 的二级存储架构\n- 实现任务的冷热分区和精准调度\n- 支持高负载场景下的批量任务触发\n\n【JD - 字节跳动 Java 后端】\n- 熟悉分布式系统设计\n- 熟悉 MySQL、Redis、Kafka\n- 有高并发系统开发经验\n- 良好的问题排查能力\n\n输出到 ./bytedance_prep.md",
+      "expected_output": "追问必须优先覆盖 JD 中的关键点（分布式、MySQL、Redis、高并发），并标注'来自 JD'。必须输出 JD 对齐小节。",
+      "assertions": [
+        {
+          "name": "jd-tagged-questions",
+          "description": "追问中有标注'来自 JD'的问题",
+          "check": "output contains questions marked with '[来自 JD]' or similar JD reference"
+        },
+        {
+          "name": "jd-alignment-section",
+          "description": "输出包含 JD 对齐小节",
+          "check": "output contains 'JD 对齐' section mapping JD requirements to experiences"
+        },
+        {
+          "name": "covers-jd-keywords",
+          "description": "追问覆盖了 JD 的关键词（分布式、MySQL、Redis、高并发）",
+          "check": "questions cover JD keywords like '分布式', 'MySQL', 'Redis', '高并发'"
+        }
+      ],
+      "files": []
+    }
+  ]
+}
