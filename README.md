@@ -15,13 +15,11 @@
 | `bago-answers` | 面试八股文答案生成器。 |
 | `brainstorming` | 在任何创意工作之前必须使用 - 创建功能、构建组件、添加功能或修改行为。 |
 | `browser-use` | Automates browser interactions for web testing, form filling, screenshots, and data ext… |
-| `code-study-doc` | 代码研读学习文档生成器。 |
-| `codebase-onboarding` | Use when a developer (especially a new team member or intern) needs to systematically u… |
+| `code-study-doc` | 代码研读与学习文档：深度研读（Markdown）、分层导学（离线交互 HTML，含模板），支持项目入门与跨会话进度。 |
 | `frontend-design` | Create distinctive, production-grade frontend interfaces with high design quality. Use … |
 | `handoff` | 跨会话上下文接力。 |
 | `humanizer` | Rewrite AI-sounding text so it reads like the writer without changing what it says. Use… |
 | `interview-playbook-generator` | 项目/实习面试话术生成器。 |
-| `learn-in-layers` | 分层学习法教练。 |
 | `project-coach` | 项目面试辅导教练。 |
 | `ptdd` | 帮助完成从方案设计到实施的完整流程。 |
 | `resume-optimizer-java` | 专属简历优化器，面向大厂 Java 后端秋招。 |
